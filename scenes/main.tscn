@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://5rfvp0w024p1"]
+
+[ext_resource type="Script" uid="uid://c8forb0yuwsml" path="res://scripts/main.gd" id="1_o5qli"]
+
+[node name="Main" type="Control"]
+custom_minimum_size = Vector2(679, 382)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_o5qli")
