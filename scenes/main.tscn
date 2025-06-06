@@ -1,40 +1,45 @@
-[gd_scene load_steps=19 format=3 uid="uid://5rfvp0w024p1"]
+[gd_scene load_steps=16 format=3 uid="uid://5rfvp0w024p1"]
 
 [ext_resource type="Script" uid="uid://c8forb0yuwsml" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://db38xd6ybxyy2" path="res://scripts/display_container.gd" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://dpwwyvrcvcp1y" path="res://assets/icons/134216_menu_lines_hamburger_icon.png" id="3_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://b481ovy61cbck" path="res://assets/icons/chevron-down.png" id="4_tbgi4"]
+[ext_resource type="FontFile" uid="uid://bfcku7bc36lls" path="res://assets/fonts/LogamRegular-8Mv2J.otf" id="4_tefeu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5qli"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tbgi4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o5qli"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0wfyh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wfyh"]
+bg_color = Color(0.145098, 0.145098, 0.145098, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sugp2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sugp2"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyhfs"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tefeu"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jyhfs"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbgi4"]
+bg_color = Color(0.145098, 0.145098, 0.145098, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6xl0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tefeu"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tipki"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85g3d"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_choun"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ya4ey"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eb6dy"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trceg"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8y0u"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkv2x"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6xl0"]
+bg_color = Color(0.0745098, 0.0745098, 0.0745098, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Main" type="Control"]
 custom_minimum_size = Vector2(679, 382)
@@ -63,10 +68,10 @@ layout_mode = 2
 [node name="DisplayContainer" type="MarginContainer" parent="MainContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_bottom = 20
 script = ExtResource("2_0wfyh")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/HBoxContainer/DisplayContainer"]
@@ -79,7 +84,9 @@ size_flags_vertical = 0
 [node name="MenuButton" type="MenuButton" parent="MainContainer/HBoxContainer/DisplayContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-text = "Menu"
+icon = ExtResource("3_jyhfs")
+icon_alignment = 1
+expand_icon = true
 item_count = 12
 popup/item_0/text = "Volume"
 popup/item_0/id = 0
@@ -110,6 +117,7 @@ popup/item_11/id = 11
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_tefeu")
 theme_override_font_sizes/font_size = 40
 text = "Category"
 vertical_alignment = 1
@@ -121,6 +129,7 @@ size_flags_vertical = 3
 [node name="Label" type="Label" parent="MainContainer/HBoxContainer/DisplayContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_tefeu")
 theme_override_font_sizes/font_size = 60
 text = "0123456789"
 vertical_alignment = 1
@@ -128,16 +137,18 @@ vertical_alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/HBoxContainer/DisplayContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 
+[node name="Label" type="Label" parent="MainContainer/HBoxContainer/DisplayContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_tefeu")
+theme_override_font_sizes/font_size = 30
+text = "Unit"
+
 [node name="MenuButton" type="MenuButton" parent="MainContainer/HBoxContainer/DisplayContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-text = "Menu"
+icon = ExtResource("4_tbgi4")
 alignment = 0
-
-[node name="Label" type="Label" parent="MainContainer/HBoxContainer/DisplayContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Unit"
+icon_alignment = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="MainContainer/HBoxContainer/DisplayContainer/VBoxContainer"]
 layout_mode = 2
@@ -146,6 +157,7 @@ size_flags_vertical = 3
 [node name="Label" type="Label" parent="MainContainer/HBoxContainer/DisplayContainer/VBoxContainer/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_tefeu")
 theme_override_font_sizes/font_size = 60
 text = "0123456789"
 vertical_alignment = 1
@@ -153,16 +165,18 @@ vertical_alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/HBoxContainer/DisplayContainer/VBoxContainer/VBoxContainer3"]
 layout_mode = 2
 
+[node name="Label" type="Label" parent="MainContainer/HBoxContainer/DisplayContainer/VBoxContainer/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_tefeu")
+theme_override_font_sizes/font_size = 30
+text = "Unit"
+
 [node name="MenuButton" type="MenuButton" parent="MainContainer/HBoxContainer/DisplayContainer/VBoxContainer/VBoxContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-text = "Menu"
+icon = ExtResource("4_tbgi4")
 alignment = 0
-
-[node name="Label" type="Label" parent="MainContainer/HBoxContainer/DisplayContainer/VBoxContainer/VBoxContainer3/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Unit"
+icon_alignment = 1
 
 [node name="ButtonContainer" type="MarginContainer" parent="MainContainer/HBoxContainer"]
 layout_mode = 2
@@ -190,18 +204,27 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_tbgi4")
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/focus = SubResource("StyleBoxEmpty_o5qli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0wfyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
 text = "7"
 
 [node name="Button2" type="Button" parent="MainContainer/HBoxContainer/ButtonContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0wfyh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5qli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0wfyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
 text = "4"
 
 [node name="Button3" type="Button" parent="MainContainer/HBoxContainer/ButtonContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sugp2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5qli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0wfyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
 text = "1"
 
 [node name="Panel2" type="Panel" parent="MainContainer/HBoxContainer/ButtonContainer/GridContainer/VBoxContainer"]
@@ -217,32 +240,47 @@ size_flags_vertical = 3
 [node name="Button" type="Button" parent="MainContainer/HBoxContainer/ButtonContainer/GridContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_jyhfs")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5qli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbgi4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tefeu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6xl0")
 text = "CE"
 
 [node name="Button2" type="Button" parent="MainContainer/HBoxContainer/ButtonContainer/GridContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_o6xl0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5qli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0wfyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
 text = "8"
 
 [node name="Button3" type="Button" parent="MainContainer/HBoxContainer/ButtonContainer/GridContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tipki")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5qli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0wfyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
 text = "5"
 
 [node name="Button4" type="Button" parent="MainContainer/HBoxContainer/ButtonContainer/GridContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_85g3d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5qli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0wfyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
 text = "2"
 
 [node name="Button5" type="Button" parent="MainContainer/HBoxContainer/ButtonContainer/GridContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_choun")
-text = "0"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5qli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0wfyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
+text = "0 "
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="MainContainer/HBoxContainer/ButtonContainer/GridContainer"]
 layout_mode = 2
@@ -252,29 +290,44 @@ size_flags_vertical = 3
 [node name="Button" type="Button" parent="MainContainer/HBoxContainer/ButtonContainer/GridContainer/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ya4ey")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5qli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0wfyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6xl0")
 text = "X"
 
 [node name="Button2" type="Button" parent="MainContainer/HBoxContainer/ButtonContainer/GridContainer/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_eb6dy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5qli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0wfyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
 text = "9"
 
 [node name="Button3" type="Button" parent="MainContainer/HBoxContainer/ButtonContainer/GridContainer/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_trceg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5qli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0wfyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
 text = "6"
 
 [node name="Button4" type="Button" parent="MainContainer/HBoxContainer/ButtonContainer/GridContainer/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_a8y0u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5qli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0wfyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
 text = "3"
 
 [node name="Button5" type="Button" parent="MainContainer/HBoxContainer/ButtonContainer/GridContainer/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_jkv2x")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5qli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0wfyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6xl0")
 text = "."

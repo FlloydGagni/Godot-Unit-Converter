@@ -96,7 +96,16 @@ var subcategory_list : Dictionary = {
 func _ready() -> void:
 	category_popup = category_button.get_popup()
 	value_a_popup = value_a_button.get_popup() 
-	value_b_popup = value_b_button.get_popup() 
+	value_b_popup = value_b_button.get_popup()
+	
+	category_popup.add_theme_font_override("font", preload("res://assets/fonts/LogamRegular-8Mv2J.otf"))
+	category_popup.add_theme_font_size_override("font_size", 25)
+	
+	value_a_popup.add_theme_font_override("font", preload("res://assets/fonts/LogamRegular-8Mv2J.otf"))
+	value_a_popup.add_theme_font_size_override("font_size", 25)
+	
+	value_b_popup.add_theme_font_override("font", preload("res://assets/fonts/LogamRegular-8Mv2J.otf"))
+	value_a_popup.add_theme_font_size_override("font_size", 25)
 	
 	category_popup.id_pressed.connect(_on_category_changed)
 	value_a_popup.id_pressed.connect(_on_value_a_subcategory_changed)

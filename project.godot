@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 window/size/viewport_width=960
 window/size/viewport_height=540
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
